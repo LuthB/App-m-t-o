@@ -30,7 +30,7 @@ if (navigator.geolocation) {
 function AppelAPI(long, lat) {
     // Appel à la longitude & lattitude
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&units=metric&lang=fr&appid=${CLEFAPI}`)
-        // On passe la réponse à l'appel au format json
+        
         .then((reponse) => {
             return reponse.json();
         })
@@ -45,7 +45,7 @@ function AppelAPI(long, lat) {
 
             // les heures, par tranches trois, avec leur temperature.
 
-            //permet d'obtenir la date et l'heure actuelle
+            
             let heureActuelle = new Date().getHours();
 
             for (let i = 0; i < heure.length; i++) {
